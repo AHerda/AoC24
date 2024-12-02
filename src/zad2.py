@@ -1,7 +1,13 @@
 import pandas as pd
 import numpy as np
+import os
 
-data = pd.read_csv("data/zad1-2.csv")
+day = 1
+os.system(f"bash src/get_data.sh {day}")
+data = pd.read_csv(f"data/zad0{day * 2 - 1}-0{day * 2}",
+                   delimiter="   ",
+                   names=["first", "second"],
+                   engine="python")
 
 first = data['first']
 second = data['second']
