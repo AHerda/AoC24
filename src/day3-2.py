@@ -23,4 +23,3 @@ for command in commands:
         print(command[0])
         sum += int(command[1]) * int(command[2])
         print(sum)
-    
