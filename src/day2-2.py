@@ -1,9 +1,10 @@
 import os
 
 day=2
-os.system(f"bash src/get_data.sh {day}")
+if not os.path.exists(f"data/day{day}"):
+    os.system(f"bash src/get_data.sh {day}")
 
-handle = open(f"data/zad0{day*2-1}-0{day * 2}", "r")
+handle = open(f"data/day{day}", "r")
 reports = list(map(lambda x: list(map(int, x.split(" "))), handle.read().split("\n")[:-1]))
 handle.close()
 

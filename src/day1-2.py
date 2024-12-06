@@ -3,8 +3,9 @@ import numpy as np
 import os
 
 day = 1
-os.system(f"bash src/get_data.sh {day}")
-data = pd.read_csv(f"data/zad0{day * 2 - 1}-0{day * 2}",
+if not os.path.exists(f"data/day{day}"):
+    os.system(f"bash src/get_data.sh {day}")
+data = pd.read_csv(f"data/day{day}",
                    delimiter="   ",
                    names=["first", "second"],
                    engine="python")

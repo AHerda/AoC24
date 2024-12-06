@@ -2,9 +2,10 @@ import re
 import os
 
 day=3
-os.system(f"bash src/get_data.sh {day}")
+if not os.path.exists(f"data/day{day}"):
+    os.system(f"bash src/get_data.sh {day}")
 
-handle = open(f"data/zad0{day*2-1}-0{day * 2}", "r")
+handle = open(f"data/day{day}", "r")
 pairs = re.findall("mul\((\d|\d\d|\d\d\d),(\d|\d\d|\d\d\d)\)", handle.read())
 handle.close()
 

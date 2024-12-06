@@ -10,7 +10,7 @@ echo "Fetching day: '$day' from url: '$url'"
 mkdir -p data
 
 # Obliczanie nazwy katalogu
-dir_name=$(printf "data/zad%02d-%02d" $((day * 2 - 1)) $((day * 2)))
+dir_name=$(printf "data/day$day")
 
 # Pobieranie danych i zapisywanie w odpowiednim katalogu
 curl -s -b $(cat $cookie_path) $url >$dir_name

@@ -2,9 +2,10 @@ import re
 import os
 
 day=4
-os.system(f"bash src/get_data.sh {day}")
+if not os.path.exists(f"data/day{day}"):
+    os.system(f"bash src/get_data.sh {day}")
 
-handle = open(f"data/zad0{day*2-1}-0{day * 2}", "r")
+handle = open(f"data/day{day}", "r")
 rows = handle.read().split()
 handle.close()
 
@@ -28,7 +29,7 @@ for i in range(rowlen):
             diagonalL = ""
         column += row[i]
         diagonalR += row[(i + offset) % rowlen]
-        diagonalL += row[(rowlen - 1 - i - offset + rowlen) % rowlen] 
+        diagonalL += row[(rowlen - 1 - i - offset + rowlen) % rowlen]
         offset += 1
     columns.append(column)
     diagonals.append(diagonalR)
