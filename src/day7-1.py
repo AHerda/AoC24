@@ -19,7 +19,6 @@ def test(equation):
             return True
         else:
             return False
-
     return test((result / numbers[-1], numbers[:-1])) or test((result - numbers[-1], numbers[:-1]))
 
 

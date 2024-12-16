@@ -32,7 +32,6 @@ def test(equation):
             return True
         else:
             return False
-
     return test((result / numbers[-1], numbers[:-1])) or test((result - numbers[-1], numbers[:-1])) or (test((unconcantenate(result, numbers[-1]), numbers[:-1])) if can_be_unconcantenated(result, numbers[-1]) else False)
 
 
